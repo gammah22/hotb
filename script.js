@@ -1,7 +1,7 @@
 // EmailJS integration + UI behavior
 // Uses: public key already initialized in index.html
-const EMAILJS_SERVICE_ID = "service_lniv5gm";
-const EMAILJS_TEMPLATE_ID = "template_xj1qpla";
+const EMAILJS_SERVICE_ID = "service_g82z99x";
+const EMAILJS_TEMPLATE_ID = "template_cn8nksk";
 
 const form = document.getElementById('demo-form');
 const submitBtn = document.getElementById('submit-btn');
@@ -48,12 +48,10 @@ form.addEventListener('submit', (e) => {
   emailjs.sendForm(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, form)
     .then(() => {
       status.style.color = '#16a34a';
-      status.textContent = '✅ Confirmation sent (demo). Redirecting...';
+      status.textContent = '✅ Confirmation sent. Redirecting...';
       submitBtn.textContent = 'Sent';
 
-      setTimeout(() => {
-        window.location.href = 'thankyou.html'; // optional thankyou page
-      }, 1400);
+     
     }, (err) => {
       console.error('EmailJS error', err);
       status.style.color = '#dc2626';
@@ -62,3 +60,4 @@ form.addEventListener('submit', (e) => {
       submitBtn.textContent = 'Confirm';
     });
 });
+
